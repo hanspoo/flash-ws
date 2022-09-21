@@ -1,0 +1,81 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/flash/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/flash",
+        "index": "apps/flash/src/index.html",
+        "baseHref": "/",
+        "main": "apps/flash/src/main.tsx",
+        "polyfills": "apps/flash/src/polyfills.ts",
+        "tsConfig": "apps/flash/tsconfig.app.json",
+        "assets": ["apps/flash/src/favicon.ico", "apps/flash/src/assets"],
+        "styles": ["apps/flash/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/flash/src/environments/environment.ts",
+              "with": "apps/flash/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/webpack:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "flash:build",
+        "hmr": true,
+        "proxyConfig": "apps/flash/proxy.conf.json"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "flash:build:development"
+        },
+        "production": {
+          "buildTarget": "flash:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/flash/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/flash"],
+      "options": {
+        "jestConfig": "apps/flash/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
