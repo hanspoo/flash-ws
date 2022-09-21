@@ -1,1 +1,73 @@
-/* You can add global styles to this file, and also import other style files */
+#container .trigger {
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#container .trigger:hover {
+  color: #1890ff;
+}
+
+#container .logo {
+  height: 100px;
+  margin: 16px;
+}
+
+.logo-container {
+  position: relative;
+  top: +20px;
+  left: +40px;
+  z-index: 1000;
+  height: 160px;
+}
+
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+
+#__next,
+section.ant-layout:nth-child(1) {
+  height: 100vh;
+}
+
+
+.fadeOut {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+}
+.fadeIn {
+  opacity: 1;
+  width: 100px;
+  height: 100px;
+  transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
+}
+
+dl {
+  display: flex;
+  flex-flow: row wrap;
+}
+dt {
+  padding: 2px 4px;
+
+  text-align: right;
+}
+dd {
+  flex-basis: 70%;
+  flex-grow: 1;
+  margin: 0;
+  padding: 2px 4px;
+}
+
+
+.caja {
+  margin-right: 3px;
+  height:14px;
+  width:14px;
+  background-color: orange;
+  border: solid 1px #666;
+}

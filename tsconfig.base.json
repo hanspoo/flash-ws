@@ -8,6 +8,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
+    "strictPropertyInitialization": false,
     "target": "es2015",
     "module": "esnext",
     "lib": ["es2017", "dom"],
@@ -15,7 +16,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@flash-ws/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@flash-ws/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@flash-ws/components": ["libs/components/src/index.ts"],
+      "@flash-ws/dao": ["libs/dao/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
