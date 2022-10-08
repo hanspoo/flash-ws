@@ -108,3 +108,13 @@ npm install
 ### We build app express
 
 `nx serve api`
+
+### Insert a record to view data
+
+After typeorm has run, the task table is created, so we can insert a task,
+and reload the ui to see the data.
+
+```
+psql -U flash -h localhost flash
+insert into todo (task, done) values ('Download some games for the kid', true);
+```
