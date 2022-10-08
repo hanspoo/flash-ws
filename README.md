@@ -1,4 +1,4 @@
-# Nx react+express plus typeorm, antd and storybook
+# Nx react + express plus typeorm, antd and storybook
 
 This is a project created with nx using react + express template.
 
