@@ -63,6 +63,8 @@ apt-get install -y nodejs
 
 ```
 su - postgres
+
+# Next command only if database isn't running.
 pg_ctlcluster 14 main start
 
 psql
