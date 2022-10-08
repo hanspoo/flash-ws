@@ -34,10 +34,11 @@ Components are developed using storybook. Storybook is configured with a proxy t
 Once ready the components, use them in the main react app flash.
 To scale, encapsulate the routes for each table in a route component for each table, in this case users.
 
-## full recipe
+## Full recipe
 
-I've tested on a docker machine running ubuntu 22.04 with nothing installed, to actually see the dependencies that
-are required. All these steps are not necessary for a typical linux desktop that already comes with git and curl at least.
+To actually see all the requirements, i've tested on a docker machine running ubuntu 22.04 with nothing installed.
+All these steps are not necessary for a typical linux desktop that already comes with git and curl at least.
+Also, there are many ways to create the database.
 
 ## Access a shell as root
 
@@ -45,7 +46,7 @@ are required. All these steps are not necessary for a typical linux desktop that
 
 ### Update package indices
 
-`aptupdate`
+`apt update`
 
 ### We install postgresql, git and curl (-y without confirmation)
 
