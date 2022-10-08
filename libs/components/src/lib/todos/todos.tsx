@@ -1,7 +1,7 @@
-import { User } from '@flash-ws/dao';
+import { Todo } from '@flash-ws/dao';
 import { Spin, Table } from 'antd';
 
-import styles from './usuarios.module.css';
+import styles from './todos.module.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -12,8 +12,12 @@ const columns = [
     key: 'id',
   },
   {
-    title: 'First Name',
-    dataIndex: 'firstName',
+    title: 'Task',
+    dataIndex: 'task',
+  },
+  {
+    title: 'Done',
+    dataIndex: 'done',
   },
 ];
 
@@ -21,7 +25,7 @@ const columns = [
 export interface UsuariosProps {}
 
 export function Usuarios(props: UsuariosProps) {
-  const [data, setData] = useState<Array<User>>();
+  const [data, setData] = useState<Array<Todo>>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 

@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import Usuarios from './usuarios';
+import Todos from './todos';
 
-describe('Usuarios', () => {
+describe('Todos', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Usuarios />);
+    const { baseElement } = render(<Todos />);
     expect(baseElement).toBeTruthy();
   });
 });

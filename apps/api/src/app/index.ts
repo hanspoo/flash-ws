@@ -1,6 +1,6 @@
 import * as express from 'express';
 import { Request, Response } from 'express';
-import { dataSource as myDataSource, User } from '@flash-ws/dao';
+import { dataSource as myDataSource } from '@flash-ws/dao';
 import { Message } from '@flash-ws/api-interfaces';
 import { users } from './routers/users';
 
