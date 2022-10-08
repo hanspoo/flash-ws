@@ -80,6 +80,9 @@ exit
 
 ### Leave the root level
 
+Next commands should be executed with a normal user privileges, so
+we leave root level with exit. This should drop you to a normal shell in your computer.
+
 `exit`
 
 ### Clone the repo
