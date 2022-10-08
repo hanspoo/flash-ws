@@ -69,10 +69,10 @@ pg_ctlcluster 14 main start
 
 psql
 
-create user test encrypted password 'test' createdb;
+create user flash encrypted password 'flash' createdb;
 \q
-psql -U test -h localhost template1
-create database test;
+psql -U flash -h localhost template1
+create database flash;
 \q
 
 exit

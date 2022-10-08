@@ -4,10 +4,10 @@ import { Todo } from './entity/todo.entity';
 const dataSource = new DataSource({
   type: 'postgres',
   host: 'localhost',
-  username: 'test',
-  password: 'test',
+  username: 'flash',
+  password: 'flash',
 
-  database: 'test',
+  database: 'flash',
   entities: [Todo],
   logging: true,
   synchronize: true,
