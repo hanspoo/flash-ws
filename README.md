@@ -34,31 +34,31 @@ Components are developed using storybook. Storybook is configured with a proxy t
 Once ready the components, use them in the main react app flash.
 To scale, encapsulate the routes for each table in a route component for each table, in this case users.
 
-## Receta completa
+## full recipe
 
-He probado en una máquina docker con ubuntu 22.04 sin nada instalado, para ver realmente las dependencias que
-se requieren. Todos estos pasos no son necesarios para una desktop de linux típica que ya trae git y curl al menos.
+I've tested on a docker machine running ubuntu 22.04 with nothing installed, to actually see the dependencies that
+are required. All these steps are not necessary for a typical linux desktop that already comes with git and curl at least.
 
-## Accedemos a un shell como root
+## Access a shell as root
 
 `sudo -s`
 
-### Actualizamos índices de paquetes
+### Update package indices
 
-`apt update`
+`aptupdate`
 
-### Instalamos postgresql, git y curl (-y sin confirmación)
+### We install postgresql, git and curl (-y without confirmation)
 
 `apt install postgresql git curl -y`
 
-### Instalamos node 16
+### Install node 16
 
 ```
 curl -s https://deb.nodesource.com/setup_16.x | bash
 apt-get install -y nodejs
 ```
 
-### Crear usuario y base de datos, config en archivo data-source.ts
+### Create user and database (config is in file libs/dao/src/lib/data-source.ts)
 
 ```
 su - postgres
@@ -68,40 +68,40 @@ psql
 
 create user test encrypted password 'test' createdb;
 \q
-psql -U test -h localhost  template1
+psql -U test -h localhost template1
 create database test;
 \q
 
 exit
 ```
 
-### Dejamos el nivel de root
+### Leave the root level
 
 `exit`
 
-### Clonar el repo
+### Clone the repo
 
 `git clone https://github.com/hanspoo/flash-ws`
 
-### Cambiamos a la carpeta e instalamos las dependencias.
+### Change to the folder and install the dependencies.
 
 ```
 cd flash-ws/
 npm install
 ```
 
-### Ejecutamos los tests
+### Run the tests
 
 `npm run test`
 
-### Instalamos nx
+### Install nx
 
 `npm i -g nx`
 
-### Levantamos app react
+### We raise app react
 
 `nx serve flash`
 
-### Levantamos app express
+### We build app express
 
 `nx serve api`
